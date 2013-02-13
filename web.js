@@ -1,6 +1,8 @@
 var async   = require('async');
 var express = require('express');
 var util    = require('util');
+var u       = require('underscore');
+var routes  = require('./routes');
 
 // create an express webserver
 var app = express();
@@ -8,6 +10,8 @@ app.use(express.logger());
 app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
 // set this to a secret value to encrypt session cookies
 app.use(express.cookieSession({
@@ -28,5 +32,5 @@ app.listen(port, function () {
     console.log("Listening on " + port);
 });
 
-app.get('/', handle_facebook_request);
-app.post('/', handle_facebook_request);
+// Routing:
+app.get("/", routes.index)
