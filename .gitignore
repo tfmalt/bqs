@@ -13,3 +13,6 @@ logs
 results
 
 npm-debug.log
+INSTRUCTIONS.md
+.idea
+.env
