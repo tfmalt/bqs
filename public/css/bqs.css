@@ -1,0 +1,16 @@
+/* Scss file for keeping all color definitions in one place. */
+/* Here I plan to store cool backgrounds. */
+/* Main scss file */
+body { background-color: #046580; background-image: -webkit-repeating-linear-gradient(-30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-repeating-linear-gradient(30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-linear-gradient(30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(-30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)); background-size: 70px 120px; font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; }
+
+h1 { margin: 0; padding: 0; color: white; font-weight: normal; }
+
+h1 span { text-shadow: 0 4px 6px black; }
+
+#besser { font-family: "Oleo Script Swash Caps"; font-size: 64px; color: #ce1c00; -webkit-text-stroke: 1px white; }
+
+#quizzer { font-family: "HelveticaNeue-UltraLight", "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; text-transform: lowercase; letter-spacing: 0.06em; font-size: 54px; }
+
+#logo { font-family: "Oleo Script Swash Caps"; font-size: 156px; }
+
+#q { position: relative; top: 50px; }
