@@ -15,10 +15,10 @@
   "devDependencies": {
     "mocha": "1.8.1",
     "chai": "1.5.0",
-    "grunt": "~0.4.0rc7",
-    "grunt-contrib-watch": "~0.2.0rc7",
-    "grunt-contrib-sass": "~0.2.2rc7",
-    "grunt-contrib-livereload": "0.1.0rc8"
+    "grunt": "0.4.0rc7",
+    "grunt-contrib-watch": "0.2.0rc7",
+    "grunt-contrib-sass": "0.2.2rc7",
+    "grunt-contrib-jade": "0.4.0rc7"
   },
   "engines": {
     "node": "0.8.x",
