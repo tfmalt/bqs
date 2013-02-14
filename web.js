@@ -1,3 +1,4 @@
+/*global node: true */
 var async   = require('async');
 var express = require('express');
 var util    = require('util');
@@ -6,10 +7,12 @@ var routes  = require('./routes');
 
 // create an express webserver
 var app = express();
+
 app.use(express.logger());
 app.use(express.static(__dirname + '/public'));
 app.use(express.bodyParser());
 app.use(express.cookieParser());
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
@@ -29,8 +32,10 @@ app.use(require('faceplate').middleware({
 var port = process.env.PORT || 3000;
 
 app.listen(port, function () {
+    "use strict";
     console.log("Listening on " + port);
 });
 
 // Routing:
-app.get("/", routes.index)
+app.get("/", routes.index);
+app.get("/admin", routes.admin);
