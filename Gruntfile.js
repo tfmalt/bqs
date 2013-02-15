@@ -42,16 +42,12 @@ module.exports = function (grunt) {
                 options: {
                     style: 'compact'
                 },
-                src: [
-                    'src/scss/colors.scss', 
-                    'src/scss/backgrounds.scss',
-                    'src/scss/bqs.scss'
-                ],     
+                src: 'src/scss/bqs.scss',  
                 dest: 'public/css/bqs.css'
             }
         },
         watch: {
-            files: [ '<%= jshint.all %>', '<%= sass.dist.src %>'],
+            files: [ '<%= jshint.all %>', 'src/scss/bqs.scss'],
             tasks: ['default']
         }
     });
