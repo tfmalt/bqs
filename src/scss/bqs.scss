@@ -1,3 +1,93 @@
 /*
- * Here I plan to store cool backgrounds.
+ * Main scss file
  */
+
+@import "colors";
+@import "backgrounds";
+
+$standard-font: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+$thin-font:     'HelveticaNeue-UltraLight', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+$accent-font:   'Oleo Script Swash Caps';
+
+@mixin logo-header($headersize, $top) {
+    header {
+        position:   relative;
+        top:        $top;
+        width:      100%;
+        text-align: center;
+        $besser-size: $headersize;
+        $quizzer-size: $headersize*(55/64);
+        $stroke: 2px;
+        @if $besser-size <= 64 {
+            $stroke: 1px;
+        }
+
+        #title {
+            position: relative;
+            margin:      0;
+            padding:     0;
+            color:       white;
+            font-weight: normal;
+            top: -212px;
+
+            span {
+                text-shadow: 0 4px 6px rgba(0,0,0, 1);
+            }
+
+            #besser {
+                font-family: $accent-font;
+                font-size: $besser-size;
+                color: $color-sec-b1;
+                -webkit-text-stroke: $stroke white;
+            }
+
+            #quizzer {
+                font-family: $thin-font;
+                text-transform: lowercase;
+                letter-spacing: 0.06em;
+                font-size: $quizzer-size;
+            }
+        }
+
+        #logo {
+            position: relative;
+            width: 100%;
+            top: 0px;
+            font-family: $accent-font;
+            font-size: 224px;
+            text-align: center;
+            color: rgba(255,255,255, 0.2);
+
+            #q {
+                position: relative;
+                top:      90px;
+                left:   -38px;
+            }
+        }
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #444;
+    background-image: url("../img/pattern3.jpg");
+    text-align: center;
+    height: 100%;
+}
+
+.content {
+    width: 768px;
+    height: 100%;
+    border: 0 1px 0 1px;
+    border-color: darken($color-pri-1, 20%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    @include image-diamonds($color-pri-1);
+    font-family: $standard-font; 
+    @include logo-header(112px, 12%);
+}

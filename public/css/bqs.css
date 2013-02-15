@@ -1,16 +1,15 @@
+/* Main scss file */
 /* Scss file for keeping all color definitions in one place. */
 /* Here I plan to store cool backgrounds. */
-/* Main scss file */
-body { background-color: #046580; background-image: -webkit-repeating-linear-gradient(-30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-repeating-linear-gradient(30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-linear-gradient(30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(-30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)); background-size: 70px 120px; font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; }
+html { height: 100%; }
 
-h1 { margin: 0; padding: 0; color: white; font-weight: normal; }
+body { margin: 0; padding: 0; background-color: #444; background-image: url("../img/pattern3.jpg"); text-align: center; height: 100%; }
 
-h1 span { text-shadow: 0 4px 6px black; }
-
-#besser { font-family: "Oleo Script Swash Caps"; font-size: 64px; color: #ce1c00; -webkit-text-stroke: 1px white; }
-
-#quizzer { font-family: "HelveticaNeue-UltraLight", "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; text-transform: lowercase; letter-spacing: 0.06em; font-size: 54px; }
-
-#logo { font-family: "Oleo Script Swash Caps"; font-size: 156px; }
-
-#q { position: relative; top: 50px; }
+.content { width: 768px; height: 100%; border: 0 1px 0 1px; border-color: #01171d; box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); margin: 0 auto; background-color: #046580; background-image: -webkit-repeating-linear-gradient(-30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-repeating-linear-gradient(30deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-linear-gradient(30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(-30deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)); background-size: 70px 120px; font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; }
+.content header { position: relative; top: 12%; width: 100%; text-align: center; }
+.content header #title { position: relative; margin: 0; padding: 0; color: white; font-weight: normal; top: -212px; }
+.content header #title span { text-shadow: 0 4px 6px black; }
+.content header #title #besser { font-family: "Oleo Script Swash Caps"; font-size: 112px; color: #ce1c00; -webkit-text-stroke: 2px white; }
+.content header #title #quizzer { font-family: "HelveticaNeue-UltraLight", "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif; text-transform: lowercase; letter-spacing: 0.06em; font-size: 96.25px; }
+.content header #logo { position: relative; width: 100%; top: 0px; font-family: "Oleo Script Swash Caps"; font-size: 224px; text-align: center; color: rgba(255, 255, 255, 0.2); }
+.content header #logo #q { position: relative; top: 90px; left: -38px; }
