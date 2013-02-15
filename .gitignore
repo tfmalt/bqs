@@ -17,3 +17,4 @@ INSTRUCTIONS.md
 .idea
 .env
 .DS_STore
+.sass-cache
