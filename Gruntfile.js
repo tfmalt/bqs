@@ -47,7 +47,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: [ '<%= jshint.all %>', 'src/scss/bqs.scss'],
+            files: [ '<%= jshint.all %>', 'src/scss/*.scss'],
             tasks: ['default']
         }
     });
@@ -55,6 +55,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch'),
     grunt.loadNpmTasks('grunt-contrib-sass'),
     grunt.loadNpmTasks('grunt-contrib-jshint');
-
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    
     grunt.registerTask('default', ['sass', 'jshint']);
 };
