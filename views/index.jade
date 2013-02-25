@@ -1,11 +1,10 @@
 doctype 5
-html
+html(ng-app="bqs")
     head
         title= "BesserQuizzer Server"
-        link(rel="stylesheet", type="text/css", href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps')
         link(rel="stylesheet", type="text/css", href="/css/bqs.css")
     body
-        div.content
+        div.content(ng-controller="LoginController")
             header
                 div#logo
                     span#b B
@@ -13,4 +12,24 @@ html
                 div#title
                     span#besser Besser
                     span#quizzer Quizzer
+                button#login(ng-click="handleLoginClick($event)") Log in
 
+        div#loginbox(ng-controller="LoginController", class="hidden")
+            div.header Administrator Login
+            form
+                input(id="email", type="email", size="32", placeholder="Email")
+                br
+                input(id="password", type="password", size="32", placeholder="Password")
+                br
+                button#register() Register
+                button#reallylogin() Log in
+                div.or or
+                button#facebook(ng-click="handleFacebookClick($event)") Login with Facebook
+
+        script(type="text/javascript")
+            var FACEBOOK_APP_ID = "#{FACEBOOK_APP_ID}";
+            
+        script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+        script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js")
+        script(type="text/javascript", src="/js/logincontroller.js")
+        script(type="text/javascript", src="/js/index.js")
