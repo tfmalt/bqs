@@ -37,6 +37,14 @@ var index = {
 
     handleFBLogin: function (response) {
         console.log("facebook login response: ", response);
+        if (response.status === 'connected') {
+            FB.api('/me', index.redirectFBLogin);
+        } else {
+            console.log("got something else than connected");
+        }
+
+        $('#loginbox').removeClass('bounceIn').addClass('bounceOut');
+
     }
 };
 
