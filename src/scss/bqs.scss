@@ -1,13 +1,16 @@
 /*
  * Main scss file
  */
-
+@import "compass";
 @import "colors";
 @import "backgrounds";
+@import "widgets";
+@import "animate";
 
 $standard-font: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 $thin-font:     'HelveticaNeue-UltraLight', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 $accent-font:   'Oleo Script Swash Caps';
+$button-height: 40px;
 
 @mixin logo-header($headersize, $top) {
     header {
@@ -72,12 +75,21 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    margin:           0;
+    padding:          0;
     background-color: #444;
     background-image: url("../img/pattern3.jpg");
-    text-align: center;
-    height: 100%;
+    text-align:       center;
+    height:           100%;
+    min-width: 768px;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
 }
 
 .content {
@@ -87,7 +99,90 @@ body {
     border-color: darken($color-pri-1, 20%);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     margin: 0 auto;
-    @include image-diamonds($color-pri-1);
     font-family: $standard-font; 
-    @include logo-header(112px, 12%);
+    @include image-diamonds($color-pri-1);
+    @include logo-header(112px, 4%);
+
+    button {
+        position: relative;
+        top: -200px;
+
+        @include standard-button($color-pri-1, white, 52px, 52*3px);
+    }
+}
+
+#loginbox {
+    position:         absolute;
+    top:              -10000px;
+    margin:           0 auto;
+    width:            (768/2)px;
+    padding:          0px;
+    background-color: $color-pri-1;
+    border:           1px solid desaturate(darken($color-pri-1, 6%), 30%);
+    font-size:        17px;
+    font-family:      $standard-font;
+    font-weight:      normal;
+    color:            white;
+    border-radius:    8px;
+    box-shadow: 0 4px 12px rgba(black, 0.6);
+    -webkit-animation-duration: 0.6s;
+
+    @include login-gradient($color-pri-1);
+
+    .header {
+        padding-top: 12px;
+        /* biackground-color: desaturate(lighten($color-pri-1, 30%), 40%); */
+        /* border-bottom: 1px solid white; */
+        /* border-radius: 7px 7px 0 0; */
+        text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .or {
+        text-shadow: 0 -1px 2px rgba(black, 0.6);
+    }
+
+    form {
+        padding: 16px 32px;
+
+        label {
+            width: 80px;
+            text-align: left;
+            float: left;
+            margin-left: 8px;
+            margin-top: 8px ;
+        }
+
+        input {
+            -webkit-decoration: none;
+            height: 32px;
+            width: 258px;
+            border-radius: 4px;
+            font-size: 17px;
+            margin: 4px 0 4px 0;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            padding: 0 6px;
+            box-shadow: 0px 1px 4px rgba(0,0,0, 0.4) inset;
+
+        }
+
+        button {
+            margin: 4px;
+            font-weight: normal;
+        }
+
+        .or {
+            margin: 8px;
+        }
+
+        $faceColor: desaturate(#11d, 60%);
+        #register {
+            @include standard-button(#888, white, $button-height, 132px);
+        }
+        #reallylogin {
+            @include standard-button(#0a0, white, $button-height, 132px);
+        }
+        #facebook {
+            @include standard-button($facebookBlue, white, $button-height, (132*2)+8px);
+        }
+    }
 }
