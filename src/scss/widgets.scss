@@ -1,0 +1,53 @@
+$button-height: 44px;
+$fontsize:      17px;
+$height:        auto;
+$width:         auto;
+
+@mixin standard-button($bgcolor, $textcolor, $height, $width) {
+    $gradientColor: $bgcolor;
+    $borderColor:   desaturate(darken($bgcolor, 6%), 30%);
+    $gcLight:       lighten($gradientColor, 10%);
+    $gcDark:        darken( $gradientColor,  4%);
+
+    -webkit-appearance: none;
+    @if $height == 'auto' {
+        height: $button-height;
+    } @else {
+        height: $height;
+    }
+    @if $width == 'auto' {
+        width: 100%;
+    } @else {
+        width: $width;
+    }
+
+    font-size:          $fontsize;
+    color:              $textcolor;
+    text-shadow: 0 -1px 2px black;
+    border-radius:      4px;
+    border:             1px solid $borderColor;
+    box-shadow: 0px 2px 6px rgba(0,0,0, 0.5);
+    background-color:   $gradientColor;
+
+    @include background-image(linear-gradient(top, $gcLight 0%, $gcDark 100%));
+                      
+    &:active {
+        box-shadow: 0 0 0 transparent;
+        @include background-image(linear-gradient(top, $gcDark 0%, $gcLight 100%));
+    }
+}
+
+@mixin login-gradient($bgcolor) {
+    $gcLight: lighten($bgcolor, 12%);
+    $gcDark:  darken($bgcolor, 6%);
+
+    @include background-image(
+        linear-gradient(top,
+            $gcLight 0,
+            $bgcolor 25%,
+            $bgcolor 75%,
+            $gcDark 100%
+        )
+    );
+
+}
