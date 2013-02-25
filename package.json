@@ -10,7 +10,8 @@
     "express": "3.1.0",
     "faceplate": "0.4.0",
     "jade": ">= 0.28.1",
-    "underscore": "~1.4.4"
+    "underscore": "~1.4.4",
+    "fb": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "1.8.1",
@@ -19,7 +20,8 @@
     "grunt-contrib-watch": "0.2.0rc7",
     "grunt-contrib-sass": "0.2.2rc7",
     "grunt-contrib-jade": "0.4.0rc7",
-    "grunt-contrib-jshint": "0.1.1rc6"
+    "grunt-contrib-jshint": "0.1.1rc6",
+    "grunt-contrib-compass": "~0.1.2"
   },
   "engines": {
     "node": "0.8.x",
