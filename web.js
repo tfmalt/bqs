@@ -40,3 +40,4 @@ app.listen(port, function () {
 app.get("/",      routes.index);
 app.get("/admin", routes.admin);
 app.post("/fblogin", routes.fblogin);
+app.post("/fb/loginstatus", routes.fb_loginstatus);
