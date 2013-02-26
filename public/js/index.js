@@ -23,7 +23,11 @@ var index = {
     handleFBLoginStatus: function (response) {
         console.log("facebook loginstatus response: ", response);
         if (response.status === 'connected') {
-            FB.api('/me', index.redirectFBLogin);
+            // We're logged in. Send user id and loginstatus to server
+            console.log("  posting stuff to server");
+            $.post("/fb/loginstatus", response);
+            // FB.api('/me', index.redirectFBLogin);
+            return;
         } else if (response.status !== 'not_authorized') {
             FB.login(index.handleFBLogin);
         }
